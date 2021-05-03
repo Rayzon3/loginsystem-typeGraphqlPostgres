@@ -1,0 +1,14 @@
+{
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": "5432",
+    "username": "rahulbhardwaj",
+    "passwaord": "rahul123",
+    "database": "loginDB",
+    "synchronize": true,
+    "loggin": true,
+    "entities": [
+        "src/entity/*.*"
+    ]  
+}
