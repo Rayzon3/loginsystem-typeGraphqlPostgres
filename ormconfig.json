@@ -7,7 +7,7 @@
     "passwaord": "rahul123",
     "database": "loginDB",
     "synchronize": true,
-    "loggin": true,
+    "logging": true,
     "entities": [
         "src/entity/*.*"
     ]  
