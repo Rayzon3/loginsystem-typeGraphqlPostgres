@@ -1,5 +1,5 @@
 import { ApolloServer } from "apollo-server-express"
-import * as Express from "express"
+import Express from "express"
 import "reflect-metadata"
 import { buildSchema } from 'type-graphql'
 import { registerResolver } from "./modules/user/Register"
@@ -16,7 +16,7 @@ const main = async () => {
         resolvers: [registerResolver]
     })
 
-    const server = new ApolloServer({schema})
+    const server = new ApolloServer({ schema })
 
     //instance of express
     const app = Express()
