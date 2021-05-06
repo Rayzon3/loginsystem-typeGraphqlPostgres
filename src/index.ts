@@ -10,6 +10,7 @@ import { redis } from "./redis"
 import cors from "cors"
 import { loginResolver } from "./modules/user/Login"
 import { findUserResolver } from "./modules/user/FindUser"
+import { logoutResolver } from "./modules/user/Logout"
 
 const main = async () => {
 
@@ -17,12 +18,12 @@ const main = async () => {
     await createConnection(); 
 
     const schema = await buildSchema({
-        resolvers: [registerResolver, loginResolver, findUserResolver]
+        resolvers: [registerResolver, loginResolver, findUserResolver, logoutResolver]
     })
 
     const server = new ApolloServer({ 
         schema, 
-        context: ({ req }: any) => ({ req }) }) //request context we can access it in our resolver  
+        context: ({ req, res }: any) => ({ req, res }) }) //request context we can access it in our resolver  
 
     //instance of express
     const app = Express()
